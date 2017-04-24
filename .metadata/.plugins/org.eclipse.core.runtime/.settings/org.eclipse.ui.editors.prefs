@@ -4,7 +4,6 @@ glanceColorBackground=0,255,0
 lineNumberRuler=true
 occurrenceIndicationColor=0,255,255
 overviewRuler_migration=migrated_3.1
-printMargin=true
 printMarginColumn=120
 quickdiff.defaultProvider=org.eclipse.egit.ui.internal.decorators.GitQuickDiffProvider
 showEnclosedSpaces=false
