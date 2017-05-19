@@ -14,7 +14,7 @@ public class MyChatClient extends JFrame implements ActionListener {
 	private Container c;
 	PrintWriter out;// 出力用のライター
 
-	public MyChatClient() {
+	public MyChatClient(String add) {
 		// 名前の入力ダイアログを開く
 		String myName = JOptionPane.showInputDialog(null, "名前を入力してください",
 				"ログイン", JOptionPane.QUESTION_MESSAGE);
@@ -48,7 +48,7 @@ public class MyChatClient extends JFrame implements ActionListener {
 			// "localhost"は，自分内部への接続．localhostを接続先のIP
 			// Address（"133.42.155.201"形式）に設定すると他のPCのサーバと通信できる
 			// 10000はポート番号．IP Addressで接続するPCを決めて，ポート番号でそのPC上動作するプログラムを特定する
-			socket = new Socket("localhost", 10000);
+			socket = new Socket(add, 10000);
 		} catch (UnknownHostException e) {
 			System.err.println("ホストの IP アドレスが判定できません: " + e);
 		} catch (IOException e) {
@@ -109,7 +109,7 @@ public class MyChatClient extends JFrame implements ActionListener {
 	}
 
 	public static void main(String[] args) {
-		MyChatClient cc = new MyChatClient();
+		MyChatClient cc = new MyChatClient(args[1]);
 		cc.setVisible(true);
 	}
 }
